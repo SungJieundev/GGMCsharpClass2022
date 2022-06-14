@@ -36,15 +36,25 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.Enemy = new System.Windows.Forms.PictureBox();
+            this.pictureBox_expensiveCar = new System.Windows.Forms.PictureBox();
             this.pictureBox_Car = new System.Windows.Forms.PictureBox();
+            this.pictureBox_expensiveCar2 = new System.Windows.Forms.PictureBox();
+            this.label_gameOver = new System.Windows.Forms.Label();
+            this.pictureBox_coin1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_coin3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_coin2 = new System.Windows.Forms.PictureBox();
+            this.label_coins = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Enemy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_expensiveCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Car)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_expensiveCar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_coin1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_coin3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_coin2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -98,15 +108,15 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
-            // Enemy
+            // pictureBox_expensiveCar
             // 
-            this.Enemy.Image = ((System.Drawing.Image)(resources.GetObject("Enemy.Image")));
-            this.Enemy.Location = new System.Drawing.Point(101, 232);
-            this.Enemy.Name = "Enemy";
-            this.Enemy.Size = new System.Drawing.Size(65, 40);
-            this.Enemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.Enemy.TabIndex = 8;
-            this.Enemy.TabStop = false;
+            this.pictureBox_expensiveCar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_expensiveCar.Image")));
+            this.pictureBox_expensiveCar.Location = new System.Drawing.Point(82, -14);
+            this.pictureBox_expensiveCar.Name = "pictureBox_expensiveCar";
+            this.pictureBox_expensiveCar.Size = new System.Drawing.Size(65, 40);
+            this.pictureBox_expensiveCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_expensiveCar.TabIndex = 8;
+            this.pictureBox_expensiveCar.TabStop = false;
             // 
             // pictureBox_Car
             // 
@@ -118,14 +128,83 @@
             this.pictureBox_Car.TabIndex = 9;
             this.pictureBox_Car.TabStop = false;
             // 
+            // pictureBox_expensiveCar2
+            // 
+            this.pictureBox_expensiveCar2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_expensiveCar2.Image")));
+            this.pictureBox_expensiveCar2.Location = new System.Drawing.Point(237, -14);
+            this.pictureBox_expensiveCar2.Name = "pictureBox_expensiveCar2";
+            this.pictureBox_expensiveCar2.Size = new System.Drawing.Size(65, 40);
+            this.pictureBox_expensiveCar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_expensiveCar2.TabIndex = 10;
+            this.pictureBox_expensiveCar2.TabStop = false;
+            // 
+            // label_gameOver
+            // 
+            this.label_gameOver.AutoSize = true;
+            this.label_gameOver.BackColor = System.Drawing.Color.Transparent;
+            this.label_gameOver.Font = new System.Drawing.Font("휴먼모음T", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_gameOver.ForeColor = System.Drawing.Color.Red;
+            this.label_gameOver.Location = new System.Drawing.Point(15, 202);
+            this.label_gameOver.Name = "label_gameOver";
+            this.label_gameOver.Size = new System.Drawing.Size(334, 67);
+            this.label_gameOver.TabIndex = 11;
+            this.label_gameOver.Text = "Game Over";
+            this.label_gameOver.Visible = false;
+            // 
+            // pictureBox_coin1
+            // 
+            this.pictureBox_coin1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_coin1.Image")));
+            this.pictureBox_coin1.Location = new System.Drawing.Point(172, 220);
+            this.pictureBox_coin1.Name = "pictureBox_coin1";
+            this.pictureBox_coin1.Size = new System.Drawing.Size(52, 49);
+            this.pictureBox_coin1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_coin1.TabIndex = 12;
+            this.pictureBox_coin1.TabStop = false;
+            // 
+            // pictureBox_coin3
+            // 
+            this.pictureBox_coin3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_coin3.Image")));
+            this.pictureBox_coin3.Location = new System.Drawing.Point(82, 74);
+            this.pictureBox_coin3.Name = "pictureBox_coin3";
+            this.pictureBox_coin3.Size = new System.Drawing.Size(52, 49);
+            this.pictureBox_coin3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_coin3.TabIndex = 13;
+            this.pictureBox_coin3.TabStop = false;
+            // 
+            // pictureBox_coin2
+            // 
+            this.pictureBox_coin2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_coin2.Image")));
+            this.pictureBox_coin2.Location = new System.Drawing.Point(250, 12);
+            this.pictureBox_coin2.Name = "pictureBox_coin2";
+            this.pictureBox_coin2.Size = new System.Drawing.Size(52, 49);
+            this.pictureBox_coin2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_coin2.TabIndex = 14;
+            this.pictureBox_coin2.TabStop = false;
+            // 
+            // label_coins
+            // 
+            this.label_coins.AutoSize = true;
+            this.label_coins.Font = new System.Drawing.Font("예스체", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_coins.Location = new System.Drawing.Point(15, 44);
+            this.label_coins.Name = "label_coins";
+            this.label_coins.Size = new System.Drawing.Size(157, 40);
+            this.label_coins.TabIndex = 15;
+            this.label_coins.Text = "Coins = 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(382, 453);
+            this.Controls.Add(this.label_coins);
+            this.Controls.Add(this.pictureBox_coin2);
+            this.Controls.Add(this.pictureBox_coin3);
+            this.Controls.Add(this.pictureBox_coin1);
+            this.Controls.Add(this.label_gameOver);
+            this.Controls.Add(this.pictureBox_expensiveCar2);
             this.Controls.Add(this.pictureBox_Car);
-            this.Controls.Add(this.Enemy);
+            this.Controls.Add(this.pictureBox_expensiveCar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox6);
@@ -139,9 +218,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Enemy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_expensiveCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Car)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_expensiveCar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_coin1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_coin3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_coin2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -153,8 +237,14 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox Enemy;
+        private System.Windows.Forms.PictureBox pictureBox_expensiveCar;
         private System.Windows.Forms.PictureBox pictureBox_Car;
+        private System.Windows.Forms.PictureBox pictureBox_expensiveCar2;
+        private System.Windows.Forms.Label label_gameOver;
+        private System.Windows.Forms.PictureBox pictureBox_coin1;
+        private System.Windows.Forms.PictureBox pictureBox_coin3;
+        private System.Windows.Forms.PictureBox pictureBox_coin2;
+        private System.Windows.Forms.Label label_coins;
     }
 }
 
