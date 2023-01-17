@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Tetris_10108
 {
@@ -17,6 +18,8 @@ namespace Tetris_10108
         int by;
         int bwidth;
         int bheight;
+
+        
 
         public Form1()
         {
@@ -50,8 +53,8 @@ namespace Tetris_10108
                     if (game[xx, yy] != 0)
                     {
                         Rectangle now_rt = new Rectangle(xx * bwidth + 2, yy * bheight + 2, bwidth - 4, bheight - 4);
-                        graphics.DrawRectangle(Pens.Green, now_rt);
-                        graphics.FillRectangle(Brushes.Red, now_rt);
+                        graphics.DrawRectangle(Pens.Coral, now_rt);
+                        graphics.FillRectangle(Brushes.LightCoral, now_rt);
                     }
                 }
             }
@@ -59,7 +62,7 @@ namespace Tetris_10108
 
         private void DrawDiagram(Graphics graphics)
         {
-            Pen dpen = new Pen(Color.Red, 4);
+            Pen dpen = new Pen(Color.Coral, 4);
             Point now = game.NowPosition;
             int bn = game.BlockNum;
             int tn = game.Turn;
@@ -110,7 +113,7 @@ namespace Tetris_10108
                 st.Y = cy * bheight;
                 et.X = bx * bwidth;
                 et.Y = st.Y;
-                graphics.DrawLine(Pens.Brown, st, et);
+                graphics.DrawLine(Pens.Indigo, st, et);
             }
         }
 
@@ -133,6 +136,7 @@ namespace Tetris_10108
                 Region rg = MakeRegion(0, -1);
                 Invalidate(rg);
             }
+            SystemSounds.Hand.Play();
             EndingCheck();
         }
 
@@ -158,6 +162,7 @@ namespace Tetris_10108
             else
             {
                 timer_down.Enabled = false;
+                SystemSounds.Beep.Play();
                 DialogResult re = MessageBox.Show("다시 시작 하시겠습니까?", "재시작", MessageBoxButtons.YesNo);
                 if(re == DialogResult.Yes)
                 {
@@ -257,9 +262,32 @@ namespace Tetris_10108
             }
         }
 
+        public int time;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             MoveDown();
+            ScoreText.Text = $"Score : {Board.score}";
+            time++;
+            TimeText.Text = $"Time : {time}";
+
+        }
+
+        public void ScoreTextChange()
+        {
+
+            ScoreText.Text = $"Score : {Board.score}";
+        }
+
+
+        private void ScoreText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

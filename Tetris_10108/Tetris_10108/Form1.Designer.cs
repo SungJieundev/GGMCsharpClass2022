@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer_down = new System.Windows.Forms.Timer(this.components);
+            this.ScoreText = new System.Windows.Forms.Label();
+            this.TimeText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer_down
@@ -38,23 +40,50 @@
             this.timer_down.Interval = 1000;
             this.timer_down.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // ScoreText
+            // 
+            this.ScoreText.AutoSize = true;
+            this.ScoreText.Font = new System.Drawing.Font("예스체", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ScoreText.Location = new System.Drawing.Point(-1, -1);
+            this.ScoreText.Name = "ScoreText";
+            this.ScoreText.Size = new System.Drawing.Size(116, 31);
+            this.ScoreText.TabIndex = 0;
+            this.ScoreText.Text = "Score : 0";
+            this.ScoreText.Click += new System.EventHandler(this.ScoreText_Click);
+            // 
+            // TimeText
+            // 
+            this.TimeText.AutoSize = true;
+            this.TimeText.Font = new System.Drawing.Font("예스체", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TimeText.Location = new System.Drawing.Point(-1, 30);
+            this.TimeText.Name = "TimeText";
+            this.TimeText.Size = new System.Drawing.Size(107, 31);
+            this.TimeText.TabIndex = 1;
+            this.TimeText.Text = "Time : 0";
+            this.TimeText.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(593, 429);
+            this.Controls.Add(this.TimeText);
+            this.Controls.Add(this.ScoreText);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Timer timer_down;
+        private System.Windows.Forms.Label ScoreText;
+        private System.Windows.Forms.Label TimeText;
     }
 }
 

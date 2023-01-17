@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
 
 namespace Tetris_10108
 {
     class Board
     {
-        internal static Board GameBoard // 보드의 유일한 객체. 싱글턴 패턴으로 만듬.
+
+        //Form1 form1 = new Form1();
+
+        internal static Board GameBoard // 보드의 유일한 객체. 싱글톤 패턴으로 만듦.
         {
             get;
             private set;
@@ -70,11 +74,29 @@ namespace Tetris_10108
                 {
                     if(CheckLine(y - yy))
                     {
+                        SystemSounds.Beep.Play();
+                        //OnScoreChange();
+                        Score();
                         ClearLine(y - yy);
                         y++;
                     }
                 }
             }
+        }
+
+        public delegate void EventHandler();
+        public event EventHandler PlusScore;
+
+        public void OnScoreChange()
+        {
+                PlusScore();       
+        }
+
+        public static int score = 0;
+        public void Score()
+        {
+            score += 1;
+            
         }
 
         private void ClearLine(int y)

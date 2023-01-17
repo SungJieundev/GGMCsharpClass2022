@@ -16,7 +16,15 @@ namespace Tetris_10108
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
+            //Form1 form1 = new Form1();
+
             Application.Run(new Form1());
+            
+            //Board board = new Board();
+
+            //board.PlusScore += board.Score;
+            //board.PlusScore += form1.ScoreTextChange;
         }
     }
 }
