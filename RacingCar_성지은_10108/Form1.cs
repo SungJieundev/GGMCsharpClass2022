@@ -118,6 +118,15 @@ namespace RacingCar_성지은_10108
         int carHP = 5;
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if(e.KeyCode == Keys.G)
+            {
+                timer1.Enabled = true;
+                boostertime.Enabled = false;
+                carSpeed = 0;
+
+                isBooster = true;
+            }
+
             if (e.KeyCode == Keys.Left)
             {
                 if (player.Left > 0) //벽뚫 방지
